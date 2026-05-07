@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rizky Foto Copy & ATK – Jasa fotokopi, jilid, dan alat tulis kantor di Ketapang, Kalimantan Barat." />
+  <title>Rizky Foto Copy & ATK – Ketapang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ====================================================
+     HEADER – Logo, Nav, Status Buka/Tutup
+     Ganti nomor WA dan edit jam di <script> bawah
+     ==================================================== -->
+<header class="site-header">
+  <div class="header-inner container">
+
+    <div class="brand">
+      <div class="brand-logo">📋</div>
+      <div>
+        <span class="brand-name">Rizky Foto Copy &amp; ATK</span>
+        <span class="brand-sub">Ketapang, Kalimantan Barat</span>
+      </div>
+    </div>
+
+    <!-- Navigasi (tampil di tablet ke atas) -->
+    <nav class="header-nav" aria-label="Navigasi utama">
+      <a href="#layanan">Layanan</a>
+      <a href="#harga">Harga</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+
+    <!-- Status otomatis via JS -->
+    <div class="status-badge" id="statusBadge">
+      <span class="status-dot" id="statusDot"></span>
+      <span id="statusText">–</span>
+    </div>
+
+  </div>
+</header>
+
+
+<!-- ====================================================
+     HERO – Judul + CTA
+     Ganti 6281234567890 dengan nomor WA toko
+     ==================================================== -->
+<section class="hero">
+  <div class="container hero-content">
+
+    <div class="hero-chip fade-up">
+      📍 Jl. RM Sudiono, Kelurahan Tengah · Ketapang
+    </div>
+
+    <h1 class="hero-title fade-up delay-1">
+      Solusi Cetak <span>Cepat</span><br />di Ketapang
+    </h1>
+
+    <p class="hero-desc fade-up delay-2">
+      Fotokopi, jilid, dan ATK lengkap dengan harga transparan.
+      Kirim file dari HP sebelum tiba — dokumen langsung diproses.
+    </p>
+
+    <div class="hero-cta fade-up delay-3">
+      <a
+        href="https://wa.me/6281234567890?text=Halo%20Rizky%20Foto%20Copy%2C%20saya%20mau%20kirim%20file%20untuk%20dicetak."
+        class="btn btn-primary" target="_blank" rel="noopener"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.118.553 4.103 1.52 5.83L.057 23.885a.5.5 0 0 0 .623.607l6.228-1.634A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.87 9.87 0 0 1-5.023-1.367l-.36-.214-3.733.979.999-3.645-.235-.374A9.855 9.855 0 0 1 2.1 12C2.1 6.534 6.534 2.1 12 2.1S21.9 6.534 21.9 12 17.466 21.9 12 21.9z"/>
+        </svg>
+        Kirim File via WhatsApp
+      </a>
+      <a href="#harga" class="btn btn-outline">Lihat Daftar Harga →</a>
+    </div>
+
+    <div class="hero-stats fade-up delay-4">
+      <div class="stat-item">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Tahun Beroperasi</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">Rp 200</div>
+        <div class="stat-label">Mulai dari</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Jenis Layanan</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ====================================================
+     LAYANAN UTAMA
+     Tambah/hapus <li> sesuai layanan asli toko
+     ==================================================== -->
+<section class="services" id="layanan">
+  <div class="container">
+    <div class="section-top">
+      <div>
+        <span class="sec-label">Apa yang kami tawarkan</span>
+        <h2 class="sec-title">Layanan Kami</h2>
+        <p class="sec-desc">Semua kebutuhan cetak &amp; alat tulis dalam satu toko</p>
+      </div>
+      <a href="#harga" class="btn btn-ghost">Lihat semua harga →</a>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Kartu 1: Fotokopi -->
+      <article class="svc-card">
+        <div class="svc-icon-wrap">🖨️</div>
+        <h3 class="svc-title">Fotokopi &amp; Print</h3>
+        <ul class="svc-list">
+          <li>Hitam Putih (A4, F4, A3)</li>
+          <li>Berwarna (A4, F4)</li>
+          <li>Print dari file (Word, PDF)</li>
+          <li>Scan &amp; kirim digital</li>
+        </ul>
+        <a href="#harga" class="svc-link">Lihat harga fotokopi →</a>
+      </article>
+
+      <!-- Kartu 2: Jilid -->
+      <article class="svc-card">
+        <div class="svc-icon-wrap">📚</div>
+        <h3 class="svc-title">Jilid &amp; Finishing</h3>
+        <ul class="svc-list">
+          <li>Spiral plastik &amp; kawat</li>
+          <li>Hardcover (polos &amp; full color)</li>
+          <li>Softcover / lakban</li>
+          <li>Laminating glossy &amp; doff</li>
+        </ul>
+        <a href="#harga" class="svc-link">Lihat harga jilid →</a>
+      </article>
+
+      <!-- Kartu 3: ATK -->
+      <article class="svc-card">
+        <div class="svc-icon-wrap">✏️</div>
+        <h3 class="svc-title">Alat Tulis Kantor</h3>
+        <ul class="svc-list">
+          <li><strong>Menulis:</strong> Pulpen, pensil, spidol</li>
+          <li><strong>Kertas:</strong> HVS, karton, sticky note</li>
+          <li><strong>Arsip:</strong> Map, ordner, binder clip</li>
+          <li>Dan perlengkapan kantor lainnya</li>
+        </ul>
+        <a href="#kontak" class="svc-link">Tanya stok →</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ====================================================
+     DAFTAR HARGA – Tab kategori
+     Edit angka harga langsung di dalam tabel di bawah
+     ==================================================== -->
+<section class="pricing" id="harga">
+  <div class="container">
+    <span class="sec-label">Transparan &amp; pasti</span>
+    <h2 class="sec-title">Daftar Harga</h2>
+    <p class="sec-desc" style="margin-bottom:32px;">Tidak ada biaya tersembunyi. Harga yang tertera adalah harga final.</p>
+
+    <!-- Tab navigasi -->
+    <div class="price-tabs" role="tablist">
+      <button class="tab-btn active" role="tab" data-tab="tab-cetak">🖨️ Fotokopi &amp; Print</button>
+      <button class="tab-btn"        role="tab" data-tab="tab-jilid">📚 Jilid &amp; Finishing</button>
+    </div>
+
+    <!-- Tab 1 -->
+    <div class="tab-panel active" id="tab-cetak">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Jenis Layanan</th><th>Ukuran</th><th>Harga / lembar</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Fotokopi Hitam Putih</td><td>A4 / F4</td><td class="price">Rp 200</td></tr>
+            <tr><td>Fotokopi Hitam Putih</td><td>A3</td><td class="price">Rp 400</td></tr>
+            <tr><td>Fotokopi Berwarna</td><td>A4</td><td class="price">Rp 1.000</td></tr>
+            <tr><td>Fotokopi Berwarna</td><td>F4</td><td class="price">Rp 1.200</td></tr>
+            <tr><td>Print Dokumen (BW)</td><td>A4</td><td class="price">Rp 500</td></tr>
+            <tr><td>Print Foto / Berwarna</td><td>A4</td><td class="price">Rp 2.500</td></tr>
+            <tr><td>Scan Dokumen</td><td>A4</td><td class="price">Rp 2.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Tab 2 -->
+    <div class="tab-panel" id="tab-jilid">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Jenis Jilid</th><th>Keterangan</th><th>Harga</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Spiral Plastik</td><td>Cover bening</td><td class="price">Rp 5.000</td></tr>
+            <tr><td>Spiral Kawat</td><td>Cover bening / warna</td><td class="price">Rp 7.000</td></tr>
+            <tr><td>Softcover / Lakban</td><td>Standar</td><td class="price">Rp 3.000</td></tr>
+            <tr><td>Hardcover</td><td>Polos</td><td class="price">Rp 25.000</td></tr>
+            <tr><td>Hardcover</td><td>Full Color</td><td class="price">Rp 35.000</td></tr>
+            <tr><td>Laminating</td><td>Glossy / Doff (A4)</td><td class="price">Rp 3.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p class="price-note">
+      💡 Butuh harga paket untuk cetak massal (100+ lembar) atau skripsi?
+      <a href="https://wa.me/6281234567890" target="_blank" rel="noopener">Hubungi kami via WhatsApp</a> untuk penawaran khusus.
+    </p>
+  </div>
+</section>
+
+
+<!-- ====================================================
+     KEUNGGULAN
+     ==================================================== -->
+<section class="features">
+  <div class="container">
+    <div style="text-align:center">
+      <span class="sec-label">Mengapa memilih kami</span>
+      <h2 class="sec-title" style="margin:0 auto 0;">Kenapa Pilih Rizky?</h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-item">
+        <div class="feat-icon">⚡</div>
+        <div class="feat-title">Proses Kilat</div>
+        <p class="feat-desc">Antrian terkelola, dokumen selesai cepat tanpa menunggu lama.</p>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon">💰</div>
+        <div class="feat-title">Harga Pasti</div>
+        <p class="feat-desc">Tarif terbuka di muka, tidak ada biaya kejutan saat bayar.</p>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon">📱</div>
+        <div class="feat-title">Kirim via HP</div>
+        <p class="feat-desc">WhatsApp file dulu dari rumah, siap cetak saat kamu tiba.</p>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon">📦</div>
+        <div class="feat-title">ATK Lengkap</div>
+        <p class="feat-desc">Kebutuhan kantor dan sekolah tersedia tanpa perlu ke toko lain.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ====================================================
+     KONTAK & LOKASI
+     Ganti koordinat Maps dan nomor WA toko
+     ==================================================== -->
+<section class="contact" id="kontak">
+  <div class="container">
+    <span class="sec-label">Temukan kami</span>
+    <h2 class="sec-title">Lokasi &amp; Kontak</h2>
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <div class="contact-row">
+          <div class="c-icon">📍</div>
+          <div>
+            <div class="c-label">Alamat</div>
+            <div class="c-value">
+              Jl. RM Sudiono, Kelurahan Tengah<br />Ketapang, Kalimantan Barat
+            </div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="c-icon">🕐</div>
+          <div>
+            <div class="c-label">Jam Operasional</div>
+            <!-- Edit jam di sini dan di blok <script> -->
+            <div class="c-value">
+              Senin – Sabtu &nbsp; 08.00 – 17.00 WIB<br />
+              Minggu &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em style="opacity:.55">Tutup</em>
+            </div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="c-icon">💬</div>
+          <div>
+            <div class="c-label">WhatsApp</div>
+            <!-- Ganti nomor di href -->
+            <div class="c-value">
+              <a href="https://wa.me/6281234567890" target="_blank" rel="noopener">0812-3456-7890</a>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="https://www.google.com/maps/dir/?api=1&destination=Jl.+RM+Sudiono+Kelurahan+Tengah+Ketapang+Kalimantan+Barat"
+          class="btn btn-maps" target="_blank" rel="noopener"
+        >
+          🗺️ &nbsp;Buka Navigasi Google Maps
+        </a>
+      </div>
+
+      <!-- PENTING: Ganti src iframe dengan embed Maps toko asli
+           Google Maps → cari lokasi → Bagikan → Sematkan peta → salin iframe -->
+      <div class="map-wrap">
+        <iframe
+          title="Peta lokasi Rizky Foto Copy & ATK"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31926.5!2d109.9833!3d-1.8396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e1d5d5adbc42f5b%3A0x2b3e7a9b25e30c3!2sKetapang%2C%20Kalimantan%20Barat!5e0!3m2!1sid!2sid!4v1234567890"
+          width="100%" height="360"
+          style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span class="footer-brand">Rizky Foto Copy &amp; ATK</span>
+    <span class="footer-copy">© 2025 · Ketapang, Kalimantan Barat</span>
+    <a href="https://wa.me/6281234567890" class="footer-wa" target="_blank" rel="noopener">💬 Chat WhatsApp</a>
+  </div>
+</footer>
+
+<!-- FAB WhatsApp -->
+<a href="https://wa.me/6281234567890" class="fab-wa" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.118.553 4.103 1.52 5.83L.057 23.885a.5.5 0 0 0 .623.607l6.228-1.634A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.87 9.87 0 0 1-5.023-1.367l-.36-.214-3.733.979.999-3.645-.235-.374A9.855 9.855 0 0 1 2.1 12C2.1 6.534 6.534 2.1 12 2.1S21.9 6.534 21.9 12 17.466 21.9 12 21.9z"/>
+  </svg>
+</a>
+
+
+<!-- ====================================================
+     SCRIPT: Tab harga + Status Buka/Tutup otomatis WIB
+     Edit JAM_BUKA, JAM_TUTUP, HARI_LIBUR sesuai toko
+     ==================================================== -->
+<script>
+/* Tab Harga */
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab).classList.add('active');
+  });
+});
+
+/* Status Buka / Tutup otomatis (WIB) */
+(function () {
+  const JAM_BUKA   = 8;    /* edit: jam buka */
+  const JAM_TUTUP  = 17;   /* edit: jam tutup */
+  const HARI_LIBUR = [0];  /* 0=Minggu – tambah 6 jika tutup Sabtu */
+
+  const wib  = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Jakarta' }));
+  const buka = !HARI_LIBUR.includes(wib.getDay()) && wib.getHours() >= JAM_BUKA && wib.getHours() < JAM_TUTUP;
+
+  const badge = document.getElementById('statusBadge');
+  const dot   = document.getElementById('statusDot');
+  const text  = document.getElementById('statusText');
+
+  badge.classList.add(buka ? 'open' : 'closed');
+  dot.classList.add(buka ? 'dot-open' : 'dot-closed');
+  text.textContent = buka ? 'Buka Sekarang' : 'Sedang Tutup';
+})();
+</script>
+
+</body>
+</html>
