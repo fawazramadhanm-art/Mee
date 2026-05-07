@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MNFR — Equilibrium Beyond Dimensions</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS: Desain Sistem Berbasis Token 
+       Objektif: Estetika minimalis, futuristik, dan responsif.
+    */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --bg: #030408;
+      --card: rgba(255, 255, 255, 0.03);
+      --card-hover: rgba(255, 255, 255, 0.08);
+      --text: #ffffff;
+      --secondary: #94a3b8;
+      --accent: #00e5ff;
+      --border: rgba(255, 255, 255, 0.1);
+      --glow: 0 0 30px rgba(0, 229, 255, 0.2);
+      --nav-bg: rgba(3, 4, 8, 0.8);
+      --transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    body.light {
+      --bg: #f8fafc;
+      --card: rgba(0, 0, 0, 0.02);
+      --card-hover: rgba(0, 0, 0, 0.05);
+      --text: #0f172a;
+      --secondary: #64748b;
+      --accent: #2563eb;
+      --border: rgba(0, 0, 0, 0.08);
+      --glow: 0 10px 30px rgba(37, 99, 235, 0.1);
+      --nav-bg: rgba(248, 250, 252, 0.8);
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+      transition: background-color 0.6s ease;
+    }
+
+    /* Latar Belakang Ambient */
+    .ambient-sphere {
+      position: fixed;
+      width: 50vmax;
+      height: 50vmax;
+      background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+      opacity: 0.05;
+      top: -20%;
+      right: -10%;
+      z-index: -1;
+      pointer-events: none;
+      filter: blur(100px);
+    }
+
+    /* Navigasi */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 8%;
+      background: var(--nav-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    nav.scrolled {
+      padding: 1rem 8%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    nav a {
+      color: var(--secondary);
+      text-decoration: none;
+      transition: var(--transition);
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .controls {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .btn-ui {
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 0.6rem 1.2rem;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.75rem;
+      transition: var(--transition);
+      backdrop-filter: blur(5px);
+    }
+
+    .btn-ui:hover {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: var(--glow);
+    }
+
+    /* Konten Utama */
+    section {
+      min-height: 100vh;
+      padding: 140px 8% 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero {
+      text-align: center;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(4rem, 15vw, 10rem);
+      font-weight: 700;
+      line-height: 0.9;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.04em;
+      background: linear-gradient(to bottom, var(--text) 50%, var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero h2 {
+      color: var(--accent);
+      font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+      text-transform: uppercase;
+      letter-spacing: 0.5em;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 1.1rem;
+      color: var(--secondary);
+      margin-bottom: 3rem;
+    }
+
+    /* Tombol Aksi */
+    .hero-cta {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .btn-main {
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-main.primary {
+      background: var(--text);
+      color: var(--bg);
+      border: none;
+    }
+
+    .btn-main.outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-main:hover {
+      transform: scale(1.05) translateY(-3px);
+      box-shadow: var(--glow);
+    }
+
+    /* Grid & Kartu */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 40px;
+      padding: 4rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      background: var(--card-hover);
+      border-color: var(--accent);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .grid-item {
+      padding: 3rem 2rem;
+      border-radius: 30px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .grid-item:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-10px);
+    }
+
+    .grid-item:hover * {
+      color: #000;
+    }
+
+    /* Animasi Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s var(--transition), transform 1s var(--transition);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Footer */
+    footer {
+      padding: 5rem 8%;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      color: var(--secondary);
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 1024px) {
+      nav ul { display: none; }
+      section { padding: 120px 6% 60px; }
+      .card { padding: 2.5rem; }
+    }
+
+    /* Efek Transisi Konten */
+    #content-wrapper {
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .switching {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  </style>
+</head>
+<body class="dark">
+
+<div class="ambient-sphere"></div>
+
+<!-- Header -->
+<nav id="navbar">
+  <a href="#" class="logo">MNFR</a>
+
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#interests">Interests</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <div class="controls">
+    <button class="btn-ui" onclick="toggleLanguage()">ID / EN</button>
+    <button class="btn-ui" onclick="toggleTheme()" id="theme-btn">Light Mode</button>
+  </div>
+</nav>
+
+<!-- Main Wrapper -->
+<main id="content-wrapper">
+  
+  <!-- Hero Section -->
+  <section class="hero reveal">
+    <h2 id="hero-sub">Equilibrium Beyond Dimensions</h2>
+    <h1 id="hero-title">MNFR</h1>
+    <p id="hero-desc">
+      Membangun harmoni antara daya cipta manusia, pemikiran multidimensi, dan kemajuan teknologi masa depan.
+    </p>
+    <div class="hero-cta">
+      <a href="#about" class="btn-main primary">Explore Vision</a>
+      <a href="https://instagram.com/frmdhannnn_" target="_blank" class="btn-main outline">Instagram</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="reveal">
+    <div class="card">
+      <h3 id="about-title" style="font-size: 2.5rem; margin-bottom: 2rem;">About Identity</h3>
+      <p id="about-text" style="font-size: 1.25rem; color: var(--secondary); max-width: 800px;">
+        Saya adalah kreator hibrida yang memadukan intuisi kreatif, sains sosial, ekonomi, dan kecerdasan artifisial ke dalam identitas digital yang bersih dan visioner.
+        <br><br>
+        Mengadopsi prinsip "Essentialism", saya berfokus menciptakan pengalaman digital yang seimbang antara estetika futuristik dan kegunaan manusiawi.
+      </p>
+    </div>
+  </section>
+
+  <!-- Philosophy Section -->
+  <section id="philosophy" class="reveal" style="text-align: center;">
+    <h3 id="phi-title" style="color: var(--accent); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 3rem;">Philosophy</h3>
+    <p id="phi-text" style="font-size: clamp(1.5rem, 4vw, 3rem); font-weight: 300; font-style: italic; line-height: 1.3;">
+      "Teknologi tidak hanya harus cerdas. Ia harus seimbang, bermakna, dan tetap memanusiakan manusia."
+    </p>
+  </section>
+
+  <!-- Interests Section -->
+  <section id="interests" class="reveal">
+    <h3 id="int-title" style="text-align: center; margin-bottom: 1rem;">Core Domains</h3>
+    <div class="grid">
+      <div class="grid-item">
+        <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem;">AI</h4>
+        <span style="font-size: 0.8rem; color: var(--secondary); letter-spacing: 2px;">SYNTHETIC INTELLIGENCE</span>
+      </div>
+      <div class="grid-item">
+        <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Economics</h4>
+        <span style="font-size: 0.8rem; color: var(--secondary); letter-spacing: 2px;">SYSTEMIC FLOWS</span>
+      </div>
+      <div class="grid-item">
+        <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Design</h4>
+        <span style="font-size: 0.8rem; color: var(--secondary); letter-spacing: 2px;">VISUAL EQUILIBRIUM</span>
+      </div>
+      <div class="grid-item">
+        <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Sociology</h4>
+        <span style="font-size: 0.8rem; color: var(--secondary); letter-spacing: 2px;">HUMAN DYNAMICS</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="reveal" style="align-items: center;">
+    <div class="card" style="text-align: center; width: 100%; max-width: 700px;">
+      <h3 id="cont-title" style="margin-bottom: 1.5rem;">Synthesize Ideas</h3>
+      <p id="cont-desc" style="color: var(--secondary); margin-bottom: 2.5rem;">Tertarik untuk berkolaborasi atau sekadar bertukar ide tentang masa depan?</p>
+      <a href="https://www.instagram.com/frmdhannnn_" target="_blank" style="text-decoration: none;">
+        <button class="btn-main primary" style="width: 100%;">Connect via Instagram</button>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 MNFR — Designed for the Future. Built with Balance.</p>
+</footer>
+
+<!-- 
+     JAVASCRIPT: Logika Interaksi 
+     Objektif: Animasi reveal, manajemen state bahasa, dan kontrol tema.
+-->
+<script>
+  // 1. Inisialisasi State
+  let currentLang = 'id';
+  const wrapper = document.getElementById('content-wrapper');
+  
+  const translations = {
+    id: {
+      sub: 'Keseimbangan Melampaui Dimensi',
+      desc: 'Membangun harmoni antara daya cipta manusia, pemikiran multidimensi, dan kemajuan teknologi masa depan.',
+      aboutT: 'Tentang Identitas',
+      aboutD: 'Saya adalah kreator hibrida yang memadukan intuisi kreatif, sains sosial, ekonomi, dan kecerdasan artifisial ke dalam identitas digital yang bersih dan visioner.<br><br>Mengadopsi prinsip "Essentialism", saya berfokus menciptakan pengalaman digital yang seimbang antara estetika futuristik dan kegunaan manusiawi.',
+      phiT: 'Filosofi',
+      phiD: '"Teknologi tidak hanya harus cerdas. Ia harus seimbang, bermakna, dan tetap memanusiakan manusia."',
+      intT: 'Domain Utama',
+      contT: 'Sintesis Ide',
+      contD: 'Tertarik untuk berkolaborasi atau sekadar bertukar ide tentang masa depan?'
+    },
+    en: {
+      sub: 'Equilibrium Beyond Dimensions',
+      desc: 'Building harmony between human creativity, multidimensional thinking, and future technological progress.',
+      aboutT: 'About Identity',
+      aboutD: 'I am a hybrid creator merging creative intuition, social sciences, economics, and AI into a clean, visionary digital identity.<br><br>Embracing the principle of "Essentialism," I focus on creating digital experiences that balance futuristic aesthetics with human-centric utility.',
+      phiT: 'Philosophy',
+      phiD: '"Technology should not only be intelligent. It must be balanced, meaningful, and keep humans at the center."',
+      intT: 'Core Domains',
+      contT: 'Synthesize Ideas',
+      contD: 'Interested in collaborating or just exchanging ideas about the future?'
+    }
+  };
+
+  // 2. Fungsi Toggle Bahasa (dengan Animasi)
+  function toggleLanguage() {
+    wrapper.classList.add('switching');
+    
+    setTimeout(() => {
+      currentLang = currentLang === 'id' ? 'en' : 'id';
+      const t = translations[currentLang];
+      
+      document.getElementById('hero-sub').innerText = t.sub;
+      document.getElementById('hero-desc').innerText = t.desc;
+      document.getElementById('about-title').innerText = t.aboutT;
+      document.getElementById('about-text').innerHTML = t.aboutD;
+      document.getElementById('phi-title').innerText = t.phiT;
+      document.getElementById('phi-text').innerText = t.phiD;
+      document.getElementById('int-title').innerText = t.intT;
+      document.getElementById('cont-title').innerText = t.contT;
+      document.getElementById('cont-desc').innerText = t.contD;
+      
+      wrapper.classList.remove('switching');
+    }, 400);
+  }
+
+  // 3. Fungsi Toggle Tema
+  function toggleTheme() {
+    const body = document.body;
+    const btn = document.getElementById('theme-btn');
+    body.classList.toggle('light');
+    btn.innerText = body.classList.contains('light') ? 'Dark Mode' : 'Light Mode';
+  }
+
+  // 4. Animasi Reveal saat Scroll
+  function handleScroll() {
+    const reveals = document.querySelectorAll('.reveal');
+    const nav = document.getElementById('navbar');
+    
+    // Navbar effect
+    if (window.scrollY > 50) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+
+    // Intersection logic
+    reveals.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        el.classList.add('active');
+      }
+    });
+  }
+
+  // Listeners
+  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('load', handleScroll);
+</script>
+
+</body>
+</html>
